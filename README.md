@@ -7,6 +7,13 @@ The main goal of the assignment was to implement the same layout using **three d
 
 ---
 
+## 🔗 Live Project (GitHub Pages)
+
+You can view the project here:  
+👉 [Homework2 – Live Demo](https://vygodinaola-sys.github.io/Homework2/)
+
+---
+
 ## 🧩 Assignment Requirements
 
 ### Part A – Layout Implementation
@@ -59,11 +66,6 @@ Each student must record a **3–5 minute video** explaining:
 
 ---
 
-## 🌐 GitHub Pages
-The project is published using **GitHub Pages**, allowing the layouts to be viewed directly in the browser.
-
----
-
 ## 🛠️ Technologies Used
 - HTML5
 - CSS3 (Plain CSS)
@@ -72,6 +74,11 @@ The project is published using **GitHub Pages**, allowing the layouts to be view
 - GitHub & GitHub Pages
 - Visual Studio Code
 - GitHub Copilot
+
+---
+
+## 🌐 GitHub Pages
+This project is deployed using **GitHub Pages** and is accessible via the link above.
 
 ---
 
