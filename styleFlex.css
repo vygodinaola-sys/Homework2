@@ -1,0 +1,85 @@
+:root{
+  --sidebar-w: 18%;   /* רוחב הסיידבר משמאל */
+  --row-h: 90px;      /* גובה שורה עליונה ביחס לתמונה */
+  --gap: 12px;
+  --top-four-h: var(--row-h);
+}
+
+*{box-sizing: border-box;}
+html,body{height:100%; margin:0; padding:20px; background:#fafafa; font-family: Arial, sans-serif;}
+
+.flex-container{
+  display:flex;
+  gap:var(--gap);
+  align-items:stretch; /* stretch so sidebar matches right area's height */
+  border:3px solid red;
+  padding:10px;
+  background:#fff;
+}
+
+
+.item{
+  border:2px solid red;
+  background:#fff;
+  padding:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.item1{
+  flex:0 0 var(--sidebar-w);
+  align-self: stretch; /* force sidebar to stretch to container height */
+  min-height: calc(3 * var(--row-h) + 2 * var(--gap)); /* מדמה גובה של 3 שורות */
+}
+
+.right{
+  flex:1 1 calc(100% - var(--sidebar-w));
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+}
+
+.top{ display:flex; gap:var(--gap); }
+.top .item{
+  flex:0 0 calc((100% - 3 * var(--gap)) / 4);
+  height: var(--top-four-h);
+}
+
+.middle{ display:flex; gap:var(--gap); align-items:stretch; }
+.left-col{ display:flex; flex-direction:column; gap:var(--gap); flex:0 0 50%; }
+.left-col .item{ height: calc(var(--row-h) / 2); min-height:36px; }
+.middle > .item.item8{ flex:1 1 50%; height: calc(1 * var(--row-h)); }
+
+.bottom{ display:flex; gap:var(--gap); }
+.bottom .item9{ flex:0 0 calc(70% - var(--gap)); height: var(--row-h); }
+.bottom .item10{ flex:0 0 calc(30% - var(--gap)); height: var(--row-h); }
+
+@media (max-width:750px){
+  /* Stack everything vertically to match the small-screen image */
+  :root{ --gap:8px; }
+  .flex-container{ flex-direction:column; gap:var(--gap); }
+  /* sidebar becomes a full-width top bar */
+  .item1{ flex:0 0 120px; width:100%; }
+
+  .right{ width:100%; display:flex; flex-direction:column; gap:var(--gap); }
+
+  /* force each small box to full width and auto height */
+  .top, .middle, .bottom, .left-col{ display:flex; flex-direction:column; gap:var(--gap); }
+
+  .top .item,
+  .left-col .item,
+  .middle > .item.item8,
+  .bottom .item9,
+  .bottom .item10,
+  .item{
+    flex:0 0 100%;
+    width:100%;
+    height:auto;
+    min-height:48px;
+  }
+
+  /* make the top four stacked with some vertical rhythm */
+  .top .item{ padding:12px 8px; }
+  .left-col .item{ padding:8px 8px; }
+}

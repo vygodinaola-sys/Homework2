@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.leftSide,
+.rightSide,
+.smallCol-inner,
+.biglCol-inner,
+.halfCol-inner {
+    border: 1px solid red;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.row-height {
+    height: 33.33vh;
+}
+
+/* התאמות מדויקות לרוחב השמאלי והימני במסך רחב */
+@media (min-width: 768px) {
+    .leftSide {
+        width: 20% !important;
+    }
+    .rightSide {
+        width: 80% !important;
+    }
+}
+
+/* תיקונים קריטיים למסך צר - כאן הבעיה הייתה! */
+@media (max-width: 767px) {
+    .row-height {
+        height: auto;
+    }
+
+    /* ה-leftSide היה נעלם כי אין לו תוכן - נסתיר אותו לגמרי כמו במקור שלך */
+    .leftSide {
+        display: none;  /* או height: 0; אם אתה מעדיף */
+    }
+
+    .rightSide {
+        width: 100% !important;
+    }
+
+    /* כל הקופסאות הפנימיות מקבלות גובה קבוע כדי שיראו גבול אדום */
+    .smallCol-inner,
+    .biglCol-inner,
+    .halfCol-inner {
+        height: 150px !important;  /* כמו במקור הידני שלך */
+    }
+
+    /* וודא שהפדינג לא "בולע" את הגובה */
+    .smallCol,
+    .biglCol {
+        padding: 10px !important;
+    }
+
+    .halfCol {
+        padding: 5px 0 !important;
+    }
+}
